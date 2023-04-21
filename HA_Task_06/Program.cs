@@ -10,8 +10,8 @@ namespace HA_Task_06
     {
         static void Main(string[] args)
         {
-            string[] fio = new string[30];
-            string[] post = new string[30];
+            string[] listFio = new string[30];
+            string[] listPost = new string[30];
             int number;
             int i = 0;
         restart:
@@ -40,13 +40,13 @@ namespace HA_Task_06
                     DeleteDossier();
                     break;
                 case 4:
-                    SearchSurname();
+                    SearchLastname();
                     break;
                 case 5:
                     Environment.Exit(0);
                     break;
                 default:
-                    Console.WriteLine("Таково пункта меню нет!");
+                    Console.WriteLine("Такого пункта меню нет!");
                     break;
             }
 
@@ -57,21 +57,21 @@ namespace HA_Task_06
             void AddDossier()
             {
                 Console.Write("Введите свое ФИО через пробел: ");
-                fio[i] = Console.ReadLine();
-                if (fio[i].Length == 0)
+                listFio[i] = Console.ReadLine();
+                if (listFio[i].Length == 0)
                 {
-                    Console.Write("Досье заполнено неверно!");
+                    Console.Write("Досье заполнено неверно");
                     return;
                 }
                 Console.Write("Введите свою должность: ");
-                post[i] = Console.ReadLine();
+                listPost[i] = Console.ReadLine();
                 i++;
-                Console.WriteLine("Досье успешно создано!");
+                Console.WriteLine("Досье успешно занесено");
             }
 
             bool ShowDossier()
             {
-                if (fio[0] != null)
+                if (listFio[0] != null)
                 {
                     for (var j = 0; j < i; j++)
                     {
@@ -79,7 +79,7 @@ namespace HA_Task_06
                     }
                     return true;
                 }
-                Console.WriteLine("Отсутствуют какие-либо досье!");
+                Console.WriteLine("Отсутствуют какие-либо досье");
                 return false;
             }
 
@@ -87,41 +87,38 @@ namespace HA_Task_06
             {
                 if (ShowDossier())
                 {
-                    int num;
+                    int numbOfList;
                     Console.WriteLine("Введите номер досье которого вы хотите удалить: ");
                     try
                     {
-                        if (!int.TryParse(Console.ReadLine(), out num) || fio[num - 1] == null)
+                        if (!int.TryParse(Console.ReadLine(), out numbOfList) || listFio[numbOfList - 1] == null)
                         {
-                            Console.WriteLine("Такого номера досье не существует!");
+                            Console.WriteLine("Такого номера досье не существует");
                             return;
                         }
                     }
                     catch (IndexOutOfRangeException ex)
                     {
-                        Console.WriteLine("Такого номера досье не существует!");
+                        Console.WriteLine("Такого номера досье не существует");
                         return;
                     }
 
-                    fio = fio.Where((source, index) => index != num - 1).ToArray();
-                    post = post.Where((source, index) => index != num - 1).ToArray();
+                    listFio = listFio.Where((source, index) => index != numbOfList - 1).ToArray();
+                    listPost = listPost.Where((source, index) => index != numbOfList - 1).ToArray();
                     i--;
 
-                    Console.WriteLine("Досье успешно удалено!");
-
-
-
+                    Console.WriteLine("Досье успешно удалено");
                 }
 
             }
-            void SearchSurname()
+            void SearchLastname()
             {
                 Console.Write("Введите фамилию, которую вы хотите найти: ");
                 var textSurname = Console.ReadLine();
                 string[] surname = new string[30];
                 for (var j = 0; j < i; j++)
                 {
-                    surname = fio[j].Split(' ');
+                    surname = listFio[j].Split(' ');
                     if (surname[0].Trim() == textSurname.Trim())
                     {
                         Show(j);
@@ -139,8 +136,8 @@ namespace HA_Task_06
 
             void Show(int j)
             {
-                if (post[j].Trim().Length == 0) post[j] = "Нет";
-                Console.WriteLine($"{j + 1}) {fio[j].Trim()} - {post[j].Trim()}");
+                if (listPost[j].Trim().Length == 0) listPost[j] = "Нет";
+                Console.WriteLine($"{j + 1}) {listFio[j].Trim()} - {listPost[j].Trim()}");
             }
         }
     }
