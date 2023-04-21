@@ -1,0 +1,8 @@
+F:\repos\Свой проекты\TrainingPractice_01\HA_TASK_05\bin\Debug\HA_TASK_05.exe.config
+F:\repos\Свой проекты\TrainingPractice_01\HA_TASK_05\bin\Debug\HA_TASK_05.exe
+F:\repos\Свой проекты\TrainingPractice_01\HA_TASK_05\bin\Debug\HA_TASK_05.pdb
+F:\repos\Свой проекты\TrainingPractice_01\HA_TASK_05\obj\Debug\HA_TASK_05.csproj.AssemblyReference.cache
+F:\repos\Свой проекты\TrainingPractice_01\HA_TASK_05\obj\Debug\HA_TASK_05.csproj.SuggestedBindingRedirects.cache
+F:\repos\Свой проекты\TrainingPractice_01\HA_TASK_05\obj\Debug\HA_TASK_05.csproj.CoreCompileInputs.cache
+F:\repos\Свой проекты\TrainingPractice_01\HA_TASK_05\obj\Debug\HA_TASK_05.exe
+F:\repos\Свой проекты\TrainingPractice_01\HA_TASK_05\obj\Debug\HA_TASK_05.pdb
